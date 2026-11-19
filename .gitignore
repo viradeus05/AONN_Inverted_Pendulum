@@ -1,0 +1,23 @@
+# Keil/uVision generated output
+OBJ/
+Listings/
+*.o
+*.d
+*.crf
+*.htm
+*.lnp
+*.map
+*.axf
+*.hex
+*.bin
+*.lst
+
+# Per-user IDE state
+*.uvoptx
+*.uvguix*
+*.bak
+
+# Editor/OS noise
+.DS_Store
+Thumbs.db
+
