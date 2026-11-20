@@ -17,7 +17,7 @@ Update：2021-12-09
 All rights reserved
 ***********************************************/
 #include "timer.h"
-#include "led.h"
+#include "LED.H"
 /**************************************************************************
 函数功能：定时中断初始化
 入口参数：arr：自动重装值  psc：时钟预分频数 
@@ -29,12 +29,14 @@ void Timer1_Init(u16 arr,u16 psc)
 	NVIC_InitTypeDef NVIC_InitStruct;
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1,ENABLE);
 	
+	TIM_TimeBaseStructInit(&TIM_TimeBaseInitStruct);  /* Also clears the TIM1 repetition counter. */
 	TIM_TimeBaseInitStruct.TIM_Period = arr;               //重装载值
 	TIM_TimeBaseInitStruct.TIM_Prescaler = psc;            //预分频系数
 	TIM_TimeBaseInitStruct.TIM_ClockDivision =0;           //时钟分割
 	TIM_TimeBaseInitStruct.TIM_CounterMode = TIM_CounterMode_Up;//TIM向上计数模式
 	TIM_TimeBaseInit(TIM1,&TIM_TimeBaseInitStruct);
 	
+	TIM_ClearITPendingBit(TIM1, TIM_IT_Update);
 	TIM_ITConfig(TIM1,TIM_IT_Update,ENABLE);               //使能定时器中断
 	
 	NVIC_InitStruct.NVIC_IRQChannel = TIM1_UP_IRQn;        //使能按键所在的外部中断通道

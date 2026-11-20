@@ -13,4 +13,5 @@
 #define PWMA   TIM3->CCR3    //‘§¡Ù ±∏”√
 void MiniBalance_PWM_Init(u16 arr,u16 psc);
 void MiniBalance_Motor_Init(void);
+void Set_Pwm(int moto);
 #endif

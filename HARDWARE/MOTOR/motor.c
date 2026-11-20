@@ -64,7 +64,7 @@ void MiniBalance_PWM_Init(u16 arr,u16 psc)
 	TIM_TimeBaseStructure.TIM_Prescaler =psc; 
 	//Set the clock split :TDTS = Tck_tim
 	//设置时钟分割:TDTS = Tck_tim
-	TIM_TimeBaseStructure.TIM_ClockDivision = 1; 
+	TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
 	//Up counting mode 
 	//向上计数模式  
 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;  
@@ -99,5 +99,12 @@ void MiniBalance_PWM_Init(u16 arr,u16 psc)
 	//Enable TIM3
 	//使能TIM3
 	TIM_Cmd(TIM3, ENABLE);  
-} 
+}
 
+/* Channel B drives the cart. The caller sets the allowed PWM range. */
+void Set_Pwm(int moto)
+{
+    BIN2 = moto < 0;
+    BIN1 = moto >= 0;
+    PWMB = moto < 0 ? -moto : moto;
+}

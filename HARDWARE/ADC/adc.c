@@ -58,7 +58,7 @@ u16 Get_Adc(u8 ch)
 {
 	//设置指定ADC的规则组通道，一个序列，采样时间
 	if(ch==6) ADC_RegularChannelConfig(ADC1, ch, 1, ADC_SampleTime_239Cycles5 );	     //电源电压通过，保证准确性，选择最大周期
-	else if (ch==3)   ADC_RegularChannelConfig(ADC1, ch, 1, ADC_SampleTime_1Cycles5 ); //角位移传感器通道，保证采样速度，选择最小周期			     
+	else if (ch==3) ADC_RegularChannelConfig(ADC1, ch, 1, ADC_SampleTime_55Cycles5); // Allow the angle input to settle after sampling the supply.
 	ADC_SoftwareStartConvCmd(ADC1, ENABLE);		       //使能指定的ADC1的软件转换启动功能		 
 	while(!ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC ));  //等待转换结束
 	return ADC_GetConversionValue(ADC1);	           //返回最近一次ADC1规则组的转换结果

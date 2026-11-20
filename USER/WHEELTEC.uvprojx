@@ -385,9 +385,9 @@
           <GroupName>USER</GroupName>
           <Files>
             <File>
-              <FileName>main.c</FileName>
+              <FileName>host_main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
+              <FilePath>.\host_main.c</FilePath>
             </File>
             <File>
               <FileName>stm32f10x_it.c</FileName>
@@ -415,9 +415,9 @@
               <FilePath>..\CORE\core_cm3.h</FilePath>
             </File>
             <File>
-              <FileName>startup_stm32f10x_hd.s</FileName>
+              <FileName>startup_stm32f10x_md.s</FileName>
               <FileType>2</FileType>
-              <FilePath>..\CORE\startup_stm32f10x_hd.s</FilePath>
+              <FilePath>..\CORE\startup_stm32f10x_md.s</FilePath>
             </File>
           </Files>
         </Group>
@@ -559,6 +559,16 @@
               <FileType>1</FileType>
               <FilePath>..\SYSTEM\usart\usart.c</FilePath>
             </File>
+            <File>
+              <FileName>host_serial.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SYSTEM\usart\host_serial.c</FilePath>
+            </File>
+            <File>
+              <FileName>host_protocol.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SYSTEM\usart\host_protocol.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -573,11 +583,6 @@
               <FileName>key.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\KEY\key.c</FilePath>
-            </File>
-            <File>
-              <FileName>oled.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\OLED\oled.c</FilePath>
             </File>
             <File>
               <FileName>adc.c</FileName>
@@ -599,35 +604,15 @@
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\ENCODER\encoder.c</FilePath>
             </File>
-            <File>
-              <FileName>exti.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\EXTI\exti.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>BALANCE</GroupName>
           <Files>
             <File>
-              <FileName>control.c</FileName>
+              <FileName>host_control.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\BALANCE\CONTROL\control.c</FilePath>
-            </File>
-            <File>
-              <FileName>show.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\BALANCE\show\show.c</FilePath>
-            </File>
-            <File>
-              <FileName>DataScope_DP.C</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\BALANCE\DataScope_DP\DataScope_DP.C</FilePath>
-            </File>
-            <File>
-              <FileName>check.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\BALANCE\CHECK\check.c</FilePath>
+              <FilePath>..\BALANCE\CONTROL\host_control.c</FilePath>
             </File>
           </Files>
         </Group>
